@@ -1,0 +1,58 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 3px solid var(--yellow-theme-main-color);
+  
+    h2 {
+      font-size: 2rem; // Adjust for better scaling on smaller screens
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      line-height: 1.2; // Adjusted for better spacing on smaller screens
+      text-transform: capitalize;
+      color: var(--yellow-theme-main-color);
+      display: flex;
+      flex-grow: 1;
+      flex-wrap: wrap; // Allows wrapping on small screens to avoid overflow
+    }
+  
+    span {
+      display: flex; // Ensures proper positioning of the SVG inside the span
+      align-items: center;
+      svg {
+        font-size: 1.5rem; // Adjust the size of the icon for better scalability
+        color: var(--yellow-theme-main-color);
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .wrapper {
+      padding: 15px; // Reduce padding for smaller screens
+  
+      h2 {
+        font-size: 1.6rem; // Reduce heading size for smaller screens
+        letter-spacing: 1px;
+      }
+  
+      span svg {
+        font-size: 1.3rem; // Scale down the icon size for better fit
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .wrapper {
+      padding: 10px; // Further reduce padding for very small screens
+  
+      h2 {
+        font-size: 1.4rem; // Further reduce heading size for small screens
+        line-height: 1.1; // Adjust line height for small screens
+      }
+  
+      span svg {
+        font-size: 1.2rem; // Scale down the icon size for very small screens
+      }
+    }
+  }
+  

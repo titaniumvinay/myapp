@@ -1,0 +1,136 @@
+.navbar {
+    background-color: var(--yellow-theme-nav-background-color);
+    height: 80px;
+    display: flex;
+    justify-content: space-between; // Update to space-between for better alignment
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0; // Ensures it's sticky at the top
+    z-index: 100; // Ensures the navbar stays on top of other content
+  
+    &__container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: inherit;
+      padding: 0px 20px;
+      flex: 1;
+      justify-content: space-between; // Adjust to push menu and logo apart
+  
+      &__logo {
+        color: var(--yellow-theme-main-color);
+        cursor: pointer;
+        font-size: 2rem; // Adjusted for visibility on smaller screens
+      }
+  
+      &__menu {
+        display: flex;
+        list-style: none;
+        text-align: center;
+        transition: all 0.5s ease;
+  
+        &__item {
+          line-height: 40px;
+          margin-right: 1.5rem;
+          font-size: 1.6rem;
+  
+          &::after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 0;
+            background: transparent;
+            transition: all 0.5s ease;
+          }
+  
+          &:hover::after {
+            width: 100%;
+            background: var(--yellow-theme-main-color);
+          }
+  
+          &__links {
+            color: var(--yellow-theme-main-color);
+            text-decoration: none;
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  
+  .nav-icon {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .navbar {
+      height: 60px; // Reduced height for smaller screens
+      padding: 0 10px; // Adjust padding for small screens
+    }
+  
+    .navbar__container {
+      justify-content: space-between;
+    }
+  
+    .navbar__container__logo {
+      font-size: 1.8rem; // Adjust logo size for mobile
+    }
+  
+    .navbar__container__menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      position: absolute;
+      top: 60px; // Adjust based on reduced navbar height
+      left: -110%;
+      opacity: 0;
+      transition: all 0.5s ease;
+      background: #181818;
+      z-index: 1; // Ensures menu appears on top
+  
+      &.active {
+        left: 0px;
+        opacity: 1;
+      }
+  
+      &__item {
+        border-bottom: 1px solid #282828;
+        margin: 0;
+        padding: 15px 0; // Adjust padding for mobile
+      }
+  
+      &__links {
+        font-size: 1.4rem; // Adjust link size for mobile
+      }
+    }
+  
+    .nav-icon {
+      display: block;
+      cursor: pointer;
+      color: var(--yellow-theme-main-color);
+      padding-right: 20px;
+      font-size: 1.8rem; // Adjust size for visibility on mobile
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .navbar {
+      height: 50px; // Reduce height for very small screens
+    }
+  
+    .navbar__container__logo {
+      font-size: 1.6rem; // Further reduce logo size for small screens
+    }
+  
+    .navbar__container__menu__item {
+      padding: 12px 0; // Further reduce padding for small screens
+      font-size: 1.2rem; // Adjust font size for smaller screens
+    }
+  
+    .nav-icon {
+      font-size: 1.6rem; // Adjust icon size for small screens
+    }
+  }
+  

@@ -1,0 +1,137 @@
+.resume__download {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  
+    .download-button {
+      background-color: var(--yellow-theme-main-color);
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-size: 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+  
+      &:hover {
+        background-color: yellow;
+      }
+    }
+  }
+  
+
+
+.resume {
+    height: 100%;
+}
+
+.timeline {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+
+    &__experience,
+    &__education {
+        width: 50%;
+        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__header-text {
+            display: inline-block;
+            color: var(--yellow-theme-sub-text-color); /* Retain this for header */
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            text-transform: uppercase;
+            padding: 5px 10px;
+            border-bottom: 2px solid var(--yellow-theme-main-color);
+        }
+
+        &__header-text::before,
+        &__header-text::after {
+            position: absolute;
+            content: '';
+            width: 2px;
+            height: 5px;
+            background-color: var(--yellow-theme-main-color);
+            bottom: -1px;
+        }
+
+        &__header-text::before {
+            left: 0;
+        }
+
+        &__header-text::after {
+            right: 0;
+        }
+
+        &__vertical-timeline-element {
+            background-color: yellow; // Set the background color to yellow
+            color: black; // Set text color to black
+            padding: 15px; // Add some padding
+            border-radius: 8px; // Optional: rounded corners
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Optional: shadow for depth
+            margin-bottom: 20px; // Space between timeline elements
+
+            // Ensure all text inside is black
+            * {
+                color: black; // Set all text inside to black
+            }
+
+            &:last-child {
+                padding-bottom: 0px;
+            }
+        }
+
+        .vertical-timeline-element-title-wrapper {
+            display: flex;
+            align-items: center;
+
+            h3,
+            h4 {
+                font-size: 16px;
+                color: black; // Ensure titles are black
+            }
+
+            h4 {
+                margin-left: 8px;
+            }
+        }
+
+        .vertical-timeline-element-title-wrapper-description {
+            font-size: 18px;
+            color: black; // Ensure description is black
+        }
+
+        .vertical-timeline-element-content {
+            box-shadow: none;
+        }
+
+        .vertical-timeline-element-content-arrow {
+            display: none;
+        }
+
+        .vertical-timeline-element-date {
+            opacity: 1;
+            color: black;
+            
+            font-size: 18px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .timeline {
+        flex-direction: column;
+        &__experience,
+        &__education {
+            width: 100%;
+            gap: 2rem;
+        }
+    }
+}
